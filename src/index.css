@@ -7,7 +7,30 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.today:after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 7px 7px 0 0;
+  border-color: transparent #fff transparent transparent;
+  right: 8px;
+  bottom: 8px;
+  position: absolute;
+}
+
+.today.selected::after {
+  border-color: transparent #fff transparent transparent;
+}
+
+.today:not(.selected)::after {
+  border-color: transparent #007bff transparent transparent;
+}
+
+.day:not(.selected):hover {
+  background-color: #eee;
+}
+
+.otherMonth {
+  color: darkgrey;
 }
